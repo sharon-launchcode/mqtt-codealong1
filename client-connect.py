@@ -2,7 +2,6 @@
 import paho.mqtt.client as mqtt #import the client1
 import time
 #time imported to be able to put in delays
-#first section Add callback functions from time 2:29 in video
 def on_log(client, userdata, level, buf):
         print("log:  "+buf)
 def on_connect(client, userdata, flags, rc):
@@ -10,7 +9,6 @@ def on_connect(client, userdata, flags, rc):
         print("Connected OK")
     else:
         print("Bad connection Returned code=",rc)
-#end first section Add callback
 
 #broker="test.mosquitto.org"
 #broker="broker.heivemq.com"
@@ -23,6 +21,12 @@ broker="192.168.1.206"
 #iot.eclipse.org > 198.41.30.241
 
 client = mqtt.Client("python1")  #create new instance
+#start Add links to callback functions
+client.on_connect=on_connect #blind call back function
+client.on_log=on_log
+
+#end Add links to callback functions
+
 print("Connecting to broker ", broker)
 client.connect(broker) #connect to broker
 
