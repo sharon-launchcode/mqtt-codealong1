@@ -21,15 +21,14 @@ broker="192.168.1.206"
 #iot.eclipse.org > 198.41.30.241
 
 client = mqtt.Client("python1")  #create new instance
-#start Add links to callback functions
 client.on_connect=on_connect #blind call back function
 client.on_log=on_log
 
-#end Add links to callback functions
-
 print("Connecting to broker ", broker)
 client.connect(broker) #connect to broker
-
+#Start Add loop integrate time.sleep(4)
+client.loop_start() #Start loop
 time.sleep(4)
-
+client.loop_stop() #Stop loop
+#End Add loop integrating time.sleep(4)
 client.disconnect() #disconnect
