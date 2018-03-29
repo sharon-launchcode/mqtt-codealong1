@@ -1,7 +1,7 @@
 #!python3
 import paho.mqtt.client as mqtt #import the client1
 import time
-#ATTENTION TIME
+#time imported to be able to put in delays
 
 #broker="test.mosquitto.org"
 #broker="broker.heivemq.com"
