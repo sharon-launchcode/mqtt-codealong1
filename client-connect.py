@@ -2,6 +2,15 @@
 import paho.mqtt.client as mqtt #import the client1
 import time
 #time imported to be able to put in delays
+#first section Add callback functions from time 2:29 in video
+def on_log(client, userdata, level, buf):
+        print("log:  "+buf)
+def on_connect(client, userdata, flags, rc):
+    if rc==0:
+        print("Connected OK")
+    else:
+        print("Bad connection Returned code=",rc)
+#end first section Add callback
 
 #broker="test.mosquitto.org"
 #broker="broker.heivemq.com"
