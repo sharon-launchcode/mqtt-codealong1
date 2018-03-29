@@ -9,6 +9,9 @@ import time
 
 broker="192.168.1.206"
 #ATTENTION IP address
+#There is a publically accessible sandbox server for the Eclipse IoT projects available at iot.eclipse.org, port 1883
+#https://eclipse.org/paho/
+#iot.eclipse.org > 198.41.30.241
 
 client = mqtt.Client("python1")  #create new instance
 print("Connecting to broker ", broker)
